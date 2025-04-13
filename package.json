@@ -9,12 +9,14 @@
     "format": "prettier --write",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "jest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy": "node scripts/deploy.mjs"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --fix"
   },
   "dependencies": {
+    "inquirer": "^12.5.2",
     "react": "19.0.0",
     "react-native": "0.78.2"
   },

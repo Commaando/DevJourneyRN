@@ -1,0 +1,30 @@
+[
+  {
+    "version": "0.0.4",
+    "branch": "feat/optimise-ci",
+    "commit": "1e32928",
+    "apkUrl": "pending",
+    "timestamp": "2025-04-12T20:44:14.849Z"
+  },
+  {
+    "version": "0.0.3",
+    "branch": "feat/optimise-ci",
+    "commit": "aac6f45",
+    "apkUrl": "pending",
+    "timestamp": "2025-04-12T20:39:34.455Z"
+  },
+  {
+    "version": "0.0.2",
+    "branch": "feat/optimise-ci",
+    "commit": "0dce259",
+    "apkUrl": "pending",
+    "timestamp": "2025-04-12T20:21:34.743Z"
+  },
+  {
+    "version": "0.0.1",
+    "branch": "feat/optimise-ci",
+    "commit": "988519b",
+    "apkUrl": "pending",
+    "timestamp": "2025-04-12T20:18:22.813Z"
+  }
+]

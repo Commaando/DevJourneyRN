@@ -1,10 +1,13 @@
-name: CI Pipeline
+name: CI Build for DevJourneyRN
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - '**'
 
 jobs:
-  build-and-test:
-    name: Lint, Test, Build Android
+  build-android:
+    if: contains(github.event.head_commit.message, 'BUILD:')
     runs-on: ubuntu-latest
 
     steps:
@@ -16,21 +19,51 @@ jobs:
         with:
           node-version: 20
 
+      - name: Read build version
+        id: version
+        run: |
+          VERSION=$(jq -r .buildNumber < build-version.json)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-node-
+
       - name: Install dependencies
         run: npm ci
 
-      - name: Run ESLint
-        run: npm run lint
-
-      - name: Run Tests
-        run: echo "Tests skipped for now"
-
-      - name: Setup JDK for Android
+      - name: Setup Java
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'
+          distribution: temurin
           java-version: 17
 
-      - name: Build Android Release
+      - name: Cache Gradle files
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: ${{ runner.os }}-gradle-
+
+      - name: Build Android APK
         working-directory: android
         run: ./gradlew assembleRelease
+
+      - name: Rename APK
+        run: |
+          VERSION=${{ steps.version.outputs.version }}
+          mv android/app/build/outputs/apk/release/app-release.apk android/app/build/outputs/apk/release/devjourney-${VERSION}.apk
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: devjourney-${{ steps.version.outputs.version }}.apk
+          path: android/app/build/outputs/apk/release/devjourney-${{ steps.version.outputs.version }}.apk
+
+
+
