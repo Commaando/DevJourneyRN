@@ -1,3 +1,4 @@
+apply from: "../version.gradle"
 apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
@@ -82,9 +83,10 @@ android {
         applicationId "com.devjourneyrn"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode versionCode
+        versionName versionName
     }
+
     signingConfigs {
         debug {
             storeFile file('debug.keystore')

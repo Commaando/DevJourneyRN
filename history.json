@@ -1,5 +1,47 @@
 [
   {
+    "version": "0.0.6",
+    "branch": "feat/auto-update-android-ios-build-versions",
+    "commit": "a6d8f45",
+    "apkUrl": "devjourney-0.0.6.apk",
+    "timestamp": "2025-04-19T11:08:56.732Z"
+  },
+  {
+    "version": "0.0.5",
+    "branch": "feat/auto-update-android-ios-build-versions",
+    "commit": "551b81b",
+    "apkUrl": "devjourney-0.0.5.apk",
+    "timestamp": "2025-04-19T11:06:21.527Z"
+  },
+  {
+    "version": "0.0.4",
+    "branch": "feat/auto-update-android-ios-build-versions",
+    "commit": "db80905",
+    "apkUrl": "devjourney-0.0.4.apk",
+    "timestamp": "2025-04-19T11:02:51.816Z"
+  },
+  {
+    "version": "0.0.3",
+    "branch": "feat/auto-update-android-ios-build-versions",
+    "commit": "e693916",
+    "apkUrl": "devjourney-0.0.3.apk",
+    "timestamp": "2025-04-19T10:50:16.763Z"
+  },
+  {
+    "version": "0.0.2",
+    "branch": "feat/auto-update-android-ios-build-versions",
+    "commit": "7c5c79f",
+    "apkUrl": "devjourney-0.0.2.apk",
+    "timestamp": "2025-04-15T20:35:14.143Z"
+  },
+  {
+    "version": "0.0.1",
+    "branch": "feat/auto-update-android-ios-build-versions",
+    "commit": "551b81b",
+    "apkUrl": "devjourney-0.0.1.apk",
+    "timestamp": "2025-04-13T19:54:24.990Z"
+  },
+  {
     "version": "0.0.4",
     "branch": "feat/optimise-ci",
     "commit": "1e32928",
