@@ -57,6 +57,10 @@ function getLatestBuildVersionFromCommits() {
     const buildData = { buildNumber: version };
     writeFileSync(buildVersionPath, JSON.stringify(buildData, null, 2));
 
+    // Update native versions
+    execSync('node scripts/update-android-version.mjs');
+    execSync('node scripts/update-ios-version.mjs');
+
     const shortSHA = execSync('git rev-parse --short HEAD').toString().trim();
     const branch = execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
     const timestamp = new Date().toISOString();
@@ -70,19 +74,21 @@ function getLatestBuildVersionFromCommits() {
       version,
       branch,
       commit: shortSHA,
-      apkUrl: 'pending',
+      apkUrl: `devjourney-${version}.apk`,
       timestamp,
     });
 
     writeFileSync(historyPath, JSON.stringify(history, null, 2));
 
-    execSync('git add build-version.json history.json');
+    execSync(
+      'git add build-version.json history.json android/version.gradle ios/DevJourneyRN/Info.plist',
+    );
     execSync(`git commit -m "BUILD: #${version}"`);
     execSync('git push');
 
-    console.log(`\n🚀 Deployment for version ${version} committed and pushed.`);
+    console.log(`\nDeployment for version ${version} committed and pushed.`);
   } catch (err) {
-    console.error('❌ Deployment failed:', err.message);
+    console.error('Deployment failed:', err.message);
     process.exit(1);
   }
 })();
