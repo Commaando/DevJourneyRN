@@ -1,5 +1,12 @@
 [
   {
+    "version": "0.0.6",
+    "branch": "feat/auto-update-android-ios-build-versions",
+    "commit": "a6d8f45",
+    "apkUrl": "devjourney-0.0.6.apk",
+    "timestamp": "2025-04-19T11:08:56.732Z"
+  },
+  {
     "version": "0.0.5",
     "branch": "feat/auto-update-android-ios-build-versions",
     "commit": "551b81b",

@@ -81,7 +81,7 @@ function getLatestBuildVersionFromCommits() {
     writeFileSync(historyPath, JSON.stringify(history, null, 2));
 
     execSync(
-      'git add build-version.json history.json android/version.gradle ios/DevJourneyRN/Info.plist',
+      'git add build-version.json history.json android/version.gradle ios/DevJourneyRN/Info.plist ios/DevJourneyRN.xcodeproj/project.pbxproj',
     );
     execSync(`git commit -m "BUILD: #${version}"`);
     execSync('git push');
