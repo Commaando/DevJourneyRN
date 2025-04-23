@@ -1,5 +1,12 @@
 [
   {
+    "version": "0.0.9",
+    "branch": "feat/deployments",
+    "commit": "6612522",
+    "apkUrl": "devjourney-0.0.9.apk",
+    "timestamp": "2025-04-23T19:13:56.910Z"
+  },
+  {
     "version": "0.0.8",
     "branch": "feat/deployments",
     "commit": "d8cfb15",
