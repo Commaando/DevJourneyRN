@@ -14,6 +14,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup authenticated Git remote
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -67,22 +73,14 @@ jobs:
           mv android/app/build/outputs/apk/release/app-release.apk android/app/build/outputs/apk/release/devjourney-${VERSION}.apk
 
       - name: Upload APK to GitHub Release
+        # ✅ You're using a custom PAT here. Ensure it includes `repo` scope for private repo release permissions.
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
           VERSION=${{ steps.version.outputs.version }}
           TAG="v$VERSION"
           APK_PATH="android/app/build/outputs/apk/release/devjourney-$VERSION.apk"
-
-          # Create Git tag if it doesn't exist
-          if ! git rev-parse "$TAG" >/dev/null 2>&1; then
-            git config user.name github-actions
-            git config user.email github-actions@github.com
-            git tag "$TAG"
-            git push origin "$TAG"
-          fi
-
-          # Create or update a GitHub release
+          # Create GitHub Release
           gh release create "$TAG" "$APK_PATH" \
             --title "Version $VERSION" \
             --notes "Automated build for version $VERSION"

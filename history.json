@@ -1,5 +1,82 @@
 [
   {
+    "version": "0.0.17",
+    "branch": "feat/deployments",
+    "commit": "b618b72",
+    "apkUrl": "devjourney-0.0.17.apk",
+    "timestamp": "2025-04-23T20:16:06.105Z"
+  },
+  {
+    "version": "0.0.16",
+    "branch": "feat/deployments",
+    "commit": "89ab8de",
+    "apkUrl": "devjourney-0.0.16.apk",
+    "timestamp": "2025-04-23T20:12:39.416Z"
+  },
+  {
+    "version": "0.0.15",
+    "branch": "feat/deployments",
+    "commit": "debc463",
+    "apkUrl": "devjourney-0.0.15.apk",
+    "timestamp": "2025-04-23T20:03:31.256Z"
+  },
+  {
+    "version": "0.0.14",
+    "branch": "feat/deployments",
+    "commit": "5cd7e07",
+    "apkUrl": "devjourney-0.0.14.apk",
+    "timestamp": "2025-04-23T19:54:44.144Z"
+  },
+  {
+    "version": "0.0.13",
+    "branch": "feat/deployments",
+    "commit": "c029a4f",
+    "apkUrl": "devjourney-0.0.13.apk",
+    "timestamp": "2025-04-23T19:46:57.812Z"
+  },
+  {
+    "version": "0.0.12",
+    "branch": "feat/deployments",
+    "commit": "ff56a14",
+    "apkUrl": "devjourney-0.0.12.apk",
+    "timestamp": "2025-04-23T19:46:37.837Z"
+  },
+  {
+    "version": "0.0.11",
+    "branch": "feat/deployments",
+    "commit": "75e9f55",
+    "apkUrl": "devjourney-0.0.11.apk",
+    "timestamp": "2025-04-23T19:42:37.989Z"
+  },
+  {
+    "version": "0.0.10",
+    "branch": "feat/deployments",
+    "commit": "ee9737a",
+    "apkUrl": "devjourney-0.0.10.apk",
+    "timestamp": "2025-04-23T19:42:18.603Z"
+  },
+  {
+    "version": "0.0.9",
+    "branch": "feat/deployments",
+    "commit": "6612522",
+    "apkUrl": "devjourney-0.0.9.apk",
+    "timestamp": "2025-04-23T19:13:56.910Z"
+  },
+  {
+    "version": "0.0.8",
+    "branch": "feat/deployments",
+    "commit": "d8cfb15",
+    "apkUrl": "devjourney-0.0.8.apk",
+    "timestamp": "2025-04-23T19:00:39.320Z"
+  },
+  {
+    "version": "0.0.7",
+    "branch": "feat/deployments",
+    "commit": "7647ed3",
+    "apkUrl": "devjourney-0.0.7.apk",
+    "timestamp": "2025-04-19T16:30:56.110Z"
+  },
+  {
     "version": "0.0.6",
     "branch": "feat/auto-update-android-ios-build-versions",
     "commit": "a6d8f45",
