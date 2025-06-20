@@ -1,7 +1,7 @@
-import { HomeScreen } from './src/screens'
+import { PracticeScreenOne } from './src/practice-screens';
 
 const App = () => {
-  return <HomeScreen/>
-}
+  return <PracticeScreenOne />;
+};
 
-export default App
+export default App;
