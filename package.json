@@ -16,10 +16,13 @@
     "*.{js,jsx,ts,tsx}": "eslint --fix"
   },
   "dependencies": {
+    "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
     "inquirer": "^12.5.2",
     "plist": "^3.1.0",
     "react": "19.0.0",
-    "react-native": "0.78.2"
+    "react-native": "0.78.2",
+    "react-native-gesture-handler": "^2.26.0",
+    "react-native-reanimated": "^3.18.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
